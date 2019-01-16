@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent any
     stages {
         stage('Build') {
             steps{
@@ -7,7 +7,7 @@ pipeline {
                 sh 'mvn --version'
                 sh 'mvn -B -DskipTests clean package'
             }
-           
+
         }
     }
 }
