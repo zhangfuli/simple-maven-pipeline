@@ -6,7 +6,12 @@ pipeline {
                 echo 'mvn version'
                 sh 'mvn --version'
                 sh 'mvn package docker:build'
-
+            }
+        }
+        stage('Run'){
+            steps{
+                echo 'run'
+                sh ''
             }
         }
 
