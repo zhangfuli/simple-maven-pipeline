@@ -5,10 +5,9 @@ pipeline {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
-            }
-            steps {
                 sh 'mvn -B -DskipTests clean package'
             }
+           
         }
     }
 }
