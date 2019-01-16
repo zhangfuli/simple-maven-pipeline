@@ -5,7 +5,7 @@ pipeline {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
-                sh 'docker build -f zhangfuli/pipeline_test:latest'
+                sh 'docker build -t zhangfuli/pipeline_test:latest'
             }
         }
         stage('Run'){
