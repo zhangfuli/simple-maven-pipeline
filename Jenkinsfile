@@ -5,11 +5,11 @@ pipeline {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
-                sh 'mvn -B -DskipTests clean package'
+           
                 sh 'docker build'
                 sh 'docker tag dop-test:latest'
             }
         }
-       
+
     }
 }
