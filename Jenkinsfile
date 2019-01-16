@@ -18,7 +18,7 @@ pipeline {
         stage('Push Docker'){
             steps{
                 echo 'push'
-                sh 'docker login -u zhangfuli -p zxc1171067930.'
+                sh 'docker login -u username -p password'
                 sh 'docker push zhangfuli/pipeline_test:latest'
              }
         }
