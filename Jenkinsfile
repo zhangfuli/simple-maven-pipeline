@@ -1,14 +1,14 @@
 pipeline {
     agent { docker 'maven:3.3.3' }
     stages {
-        stage('Build Maven') {
+        stage('Build_Maven') {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
                 sh 'mvn package'
             }
         }
-        stage('Build Docker'){
+        stage('Build_Docker'){
             steps{
                 sh 'docker build -t zhangfuli/pipeline_test:latest'
             }
