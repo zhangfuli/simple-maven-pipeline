@@ -11,8 +11,11 @@ pipeline {
             }
         }
         stage('Test') {
-            sh 'make check || true'
-            junit '**/target/*.xml'
+            steps{
+                sh 'make check || true'
+                junit '**/target/*.xml'
+            }
+
         }
         stage('Deploy') {
             when {
