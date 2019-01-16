@@ -5,13 +5,13 @@ pipeline {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
-                sh 'docker build'
+                sh 'docker ps'
             }
         }
         stage('Run'){
             steps{
                 echo 'run'
-           
+
             }
         }
 
