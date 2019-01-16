@@ -12,10 +12,8 @@ pipeline {
         stage('Build Docker'){
             steps{
                 echo 'run'
-                sh 'docker build -t zhangfuli/pipeline_test:latest'
+                sh 'docker build -t zhangfuli/pipeline_test:latest ./'
             }
-
         }
-
     }
 }
