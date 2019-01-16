@@ -5,8 +5,8 @@ pipeline {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
-                sh 'vn package docker:build'
-                
+                sh 'mvn package docker:build'
+
             }
         }
 
