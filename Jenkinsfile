@@ -15,5 +15,12 @@ pipeline {
                 sh 'docker build -t zhangfuli/pipeline_test:latest ./'
             }
         }
+        stage('Push Docker'){
+            steps{
+                echo 'push'
+                sh 'docker login -u zhangfuli -p zxc1171067930.'
+                sh 'docker push zhangfuli/pipeline_test:latest'
+             }
+        }
     }
 }
