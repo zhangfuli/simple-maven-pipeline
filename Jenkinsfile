@@ -5,6 +5,7 @@ pipeline {
             steps{
                 echo 'mvn version'
                 sh 'mvn --version'
+                sh 'mvn clean package -Dmaven.test.skip=true'
                 sh 'mvn package'
             }
         }
