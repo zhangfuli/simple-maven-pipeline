@@ -8,7 +8,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Build docker'){
+        stage('Build Docker'){
             steps{
                 sh 'docker build -t zhangfuli/pipeline_test:latest'
             }
