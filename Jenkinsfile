@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo 'deploy'
-                sh "docker run -itd ${DOCKER_REGISTRY}:${BUILD_TAG}"
+                sh "docker run -itd -p 8081:8081 ${DOCKER_REGISTRY}:${BUILD_TAG}"
              }
         }
     }
