@@ -32,5 +32,11 @@ pipeline {
                   }
              }
         }
+        stage('Deploy'){
+            steps{
+                echo 'deploy'
+                sh "docker run -itd ${DOCKER_REGISTRY}:${BUILD_TAG}"
+             }
+        }
     }
 }
