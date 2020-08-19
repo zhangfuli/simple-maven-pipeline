@@ -23,7 +23,7 @@ pipeline {
         stage('Push Docker'){
             steps{
                 echo 'push'
-                sh 'docker login -u username -p password'
+               
                 withCredentials([usernamePassword(credentialsId: 'docker_registry', passwordVariable: 'password', usernameVariable: 'username')]) {
                     echo "${username}"
                     echo "${password}"
