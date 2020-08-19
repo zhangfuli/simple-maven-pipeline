@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_REGISTRY_HOST = "registry.dop.clsaa.com"
-        DOCKER_REGISTRY = "registry.dop.clsaa.com/dop/dop-web"
+        DOCKER_REGISTRY = "registry.dop.clsaa.com/1171067930/simple-maven-test"
         BUILD_TAG = "latest"
     }
     stages {
