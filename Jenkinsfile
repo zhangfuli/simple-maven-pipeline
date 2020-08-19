@@ -26,9 +26,8 @@ pipeline {
                 sh 'docker login -u username -p password'
                 withCredentials([usernamePassword(credentialsId: 'docker_registry', passwordVariable: 'password', usernameVariable: 'username')]) {
                       sh "docker login -u ${username} -p ${password} ${DOCKER_REGISTRY_HOST}"
-                      sh "docker push ${DOCKER_REGISTRY}:${build_tag}"
+                      sh "docker push ${DOCKER_REGISTRY}:${BUILD_TAG}"
                   }
-                sh 'docker push ${DOCKER_REGISTRY}:${BUILD_TAG}'
              }
         }
     }
