@@ -3,8 +3,8 @@ pipeline {
     environment {
         DOCKER_REGISTRY_HOST = "registry.dop.clsaa.com"
         DOCKER_REGISTRY = "registry.dop.clsaa.com/dop/dop-web"
-        build_tag="latest"
-	}
+        BUILD_TAG = "latest"
+    }
     stages {
         stage('Build Maven') {
             steps{
@@ -17,7 +17,7 @@ pipeline {
         stage('Build Docker'){
             steps{
                 echo 'run'
-                sh 'docker build -t ${DOCKER_REGISTRY}:${build_tag} ./'
+                sh 'docker build -t ${DOCKER_REGISTRY}:${BUILD_TAG} ./'
             }
         }
         stage('Push Docker'){
@@ -28,7 +28,7 @@ pipeline {
                       sh "docker login -u ${username} -p ${password} ${DOCKER_REGISTRY_HOST}"
                       sh "docker push ${DOCKER_REGISTRY}:${build_tag}"
                   }
-                sh 'docker push ${DOCKER_REGISTRY}:${build_tag}'
+                sh 'docker push ${DOCKER_REGISTRY}:${BUILD_TAG}'
              }
         }
     }
