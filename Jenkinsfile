@@ -25,11 +25,6 @@ pipeline {
                 echo 'push'
                
                 withCredentials([usernamePassword(credentialsId: 'docker_registry', passwordVariable: 'password', usernameVariable: 'username')]) {
-<<<<<<< HEAD
-                    echo "${username}"
-                    echo "${password}"
-=======
->>>>>>> checkout-test
                       sh "docker login -u ${username} -p ${password} ${DOCKER_REGISTRY_HOST}"
                       sh "docker push ${DOCKER_REGISTRY}:${BUILD_TAG}"
                   }
